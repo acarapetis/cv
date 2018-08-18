@@ -116,7 +116,7 @@ h2 {
     font-size: 125%;
     font-weight: 600;
     margin-bottom: 1pt;
-    padding: 0 4pt;
+    padding: 0 0 0 4pt;
 }
 
 .title .spacetime {
@@ -128,7 +128,7 @@ h2 {
     font-weight: normal;
     font-size: 10pt;
     display: inline-block;
-    margin:0 8pt;
+    margin: 0 0 0 8pt;
 }
 
 
