@@ -1,0 +1,74 @@
+//- vim: ft=pug sw=2 ts=2 et
+
+title Anthony Carapetis - Curriculum Vitae
+style
+  include style.css
+
+mixin item
+  li
+    .title
+      | #{attributes.title}
+      .spacetime
+        .when= attributes.when
+        .institution= attributes.institution
+        .where= attributes.where
+    .description
+      block
+
+#heading
+  #main
+    h1 Anthony Carapetis
+    h2 Curriculum Vitae
+  #contact
+    include private.pug
+    .email
+      a(href='mailto:anthony.carapetis@gmail.com') anthony.carapetis@gmail.com
+    .website
+      a(href='https://a.carapetis.com') a.carapetis.com
+
+.section
+  h2 Experience
+  ul
+    +item(title='Software Engineer',
+          when='2018',
+          institution='High Resolution Plant Phenomics Centre, CSIRO',
+          where='Canberra')
+      p asdf2
+    +item(title='Casual Sessional Academic',
+          when='2015\u{2014}2017',
+          institution='Australian National University',
+          where='Canberra')
+      p Teaching and marking for undergraduate classes in mathematics and astrophysics.
+    +item(title='Software Developer',
+          when='2006\u{2014}2013',
+          institution='Unisolve Pty Ltd',
+          where='Melbourne')
+      :markdown-it
+        Design, development and maintenance of predominantly web-based software, along with administration of associated systems and databases.
+
+        I worked on various large web applications, mostly built in Perl/Apache/Linux, using frameworks and tools including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. Many of these applications were part of accounting and resource management systems for mid-sized companies, often requiring us to interface with much older proprietary software. Other projects were public-facing web applications, where my focus was more often on user experience, using modern Javascript UI and AJAX libraries to create interactive interfaces.
+
+        In most projects I worked on at Unisolve I was also involved in the backend development and administration required to support these applications, including design of databases and simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups. Thus I have extensive experience using shell scripts, cron jobs and daemons to automate systems.
+
+    +item(title='Sessional Teaching Associate',
+          when='2012',
+          institution='Monash University',
+          where='Melbourne')
+      p Teaching and marking for undergraduate engineering calculus.
+    +item(title='Web Developer (Contractor)',
+          when='2009\u20142010',
+          institution='Ramble Communications',
+          where='Melbourne')
+      p Front-end development and maintenance of small websites. Primarily required expertise in HTML, CSS and Javascript, with a small amount of PHP and Python.
+
+.section
+  h2 Education
+  ul
+    +item(title='Doctor of Philosophy (Mathematics)',
+      when='2013\u20142018',
+      institution='Australian National University',
+      where='Canberra')
+    +item(title='Bachelor of Science Advanced (with Honours)',
+      when='2009\u20142012',
+      institution='Monash University',
+      where='Melbourne')
