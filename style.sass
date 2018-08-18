@@ -1,0 +1,137 @@
+// vim: ft=sass ts=2 sw=2 et
+@import url('https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro|Work+Sans|Yanone+Kaffeesatz|Fjalla+One|Cabin|Open Sans')
+@import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css')
+@page
+  size: 210mm 297mm
+  -relaxed-page-width: 210mm
+  -relaxed-page-height: 297mm
+
+body 
+  font-family: 'Roboto'
+  margin: 15mm
+  font-size: 10pt
+
+a 
+  color: #25A
+  text-decoration: none
+  font-weight: 600
+
+code 
+  font-family: 'Dejavu Sans Mono'
+
+
+#heading 
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin-bottom: 24pt
+
+  h1,h2
+    font-family: Cabin
+    font-weight: normal
+    text-transform: none
+    letter-spacing: -1pt
+    font-size: 30pt
+  h2
+    font-size: 18pt
+  #main > *
+    margin: 0
+    line-height: 1
+
+#contact 
+  font-size: 12pt
+  list-style-type: none
+
+*::before 
+  font-family: 'Font Awesome 5 Free'
+  font-weight: 900
+  font-size: 80%
+  margin-right: 0.5em
+  color: #aaa
+  display: inline-block
+  vertical-align: middle
+
+.phone::before
+  content: '\f095' 
+.email::before
+  content: '\f1fa' 
+.website::before
+  content: '\f0c1' 
+
+.section 
+  margin: 10pt 0 5pt 0
+  padding: 10pt 0 0 0
+  border: 1pt solid black
+  border-width: 1pt 0 0 1pt
+  border-radius: 10pt 0 0 0
+  position: relative
+
+.section > ul 
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+.section .headline 
+  margin-top: -18pt
+  margin-bottom: 10pt
+  text-align: center
+
+.section h2 
+  margin: 0
+  padding: 0 5pt
+  background-color: white
+  display: inline-block
+  font-size: 14pt 
+  text-transform: uppercase
+  font-family: 'Fjalla One'
+  font-weight: normal
+  letter-spacing: 2pt 
+  text-align: center
+
+.item 
+  position: relative
+  margin: 5pt 0 8pt 0
+  border: 1pt solid black
+  border-width: 1pt 0 0 0
+  padding: 8pt 0 8pt 8pt
+
+.item .titleline 
+  margin-top: -16pt
+  margin-left: -4pt
+  background: white
+  margin-bottom: 1pt
+  padding: 0 0 0 4pt
+
+  .title
+    font-size: 12pt
+    font-family: 'Cabin'
+
+  .spacetime 
+    margin-top: 2.5pt
+    float: right
+    .when::before  
+      content: '\f073' 
+    .where::before  
+      content: '\f3c5' 
+    .institution::before  
+      content: '\f1ad' 
+    *::before 
+      line-height: 0
+      margin-top: -3pt
+      margin-right: 2pt
+      font-style: normal
+
+
+  .spacetime > *
+    display: inline-block
+    margin: 0 0 0 8pt
+
+.item .institution 
+  font-style: italic
+
+.item .description 
+  margin-top: 1pt
+
+.item .description p 
+  margin: 0 0 5pt 0
+  padding: 0
