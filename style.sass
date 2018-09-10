@@ -2,14 +2,33 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro|Work+Sans|Yanone+Kaffeesatz|Fjalla+One|Cabin|Open Sans')
 @import url('https://use.fontawesome.com/releases/v5.2.0/css/all.css')
 @page
-  size: 210mm 297mm
+  size: A4 portrait
   -relaxed-page-width: 210mm
   -relaxed-page-height: 297mm
+  min-height: 100%
+  margin: 0
 
 body 
   font-family: 'Roboto'
-  margin: 15mm
+  margin: 0
   font-size: 10pt
+  background-color: white
+
+.page
+  height: 100%
+  padding: 15mm
+  position: relative
+  box-sizing: border-box
+
+.footer
+  position: absolute
+  display: block
+  width: 100%
+  bottom: 0mm
+  left: 0mm
+  padding: 30pt 0
+  background: #eee
+  text-align: center
 
 a 
   color: #25A
@@ -23,8 +42,9 @@ code
 #heading 
   display: flex
   flex-direction: row
+  flex-wrap: wrap
   justify-content: space-between
-  margin-bottom: 24pt
+  margin-bottom: 8pt
 
   h1,h2
     font-family: Cabin
@@ -34,11 +54,11 @@ code
     font-size: 30pt
   h2
     font-size: 18pt
-  #main > *
+  .main > *
     margin: 0
     line-height: 1
 
-#contact 
+.contact 
   font-size: 12pt
   list-style-type: none
 
@@ -50,6 +70,7 @@ code
   color: #aaa
   display: inline-block
   vertical-align: middle
+  margin-top: -0.2em
 
 .phone::before
   content: '\f095' 
@@ -58,13 +79,27 @@ code
 .website::before
   content: '\f0c1' 
 
-.section 
-  margin: 10pt 0 5pt 0
+.sectionwrapper
   padding: 10pt 0 0 0
-  border: 1pt solid black
-  border-width: 1pt 0 0 1pt
+  page-break-inside: avoid
+
+.section 
+  margin: 0
+  padding: 0
   border-radius: 10pt 0 0 0
+  border-width: 2pt 0 0 1pt
+  border-style: solid
+  border-color: black
   position: relative
+
+.section::after
+    //content: ''
+    position: absolute
+    left: -2pt
+    bottom: 0
+    height: 24pt
+    width: 9pt
+    background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))
 
 .section > ul 
   list-style-type: none
@@ -72,13 +107,13 @@ code
   padding: 0
 
 .section .headline 
-  margin-top: -18pt
-  margin-bottom: 10pt
+  margin-top: -9pt
+  margin-bottom: 4pt
   text-align: center
 
 .section h2 
-  margin: 0
-  padding: 0 5pt
+  margin: 0 10pt
+  padding: 0 3pt 0 4pt
   background-color: white
   display: inline-block
   font-size: 14pt 
@@ -87,50 +122,72 @@ code
   font-weight: normal
   letter-spacing: 2pt 
   text-align: center
+  //border: 0.2pt solid red
+
+.itemwrapper
+  padding-top: 6pt
 
 .item 
   position: relative
-  margin: 5pt 0 8pt 0
-  border: 1pt solid black
+  margin: 0 0 10pt 0
+  border: 1pt dashed black
   border-width: 1pt 0 0 0
-  padding: 8pt 0 8pt 8pt
+  padding: 8pt 0 0 8pt
 
 .item .titleline 
   margin-top: -16pt
   margin-left: -4pt
-  background: white
-  margin-bottom: 1pt
-  padding: 0 0 0 4pt
+  margin-bottom: 2pt
+  padding: 0 0 0 0
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
 
   .title
+    padding: 0 4pt 0 2pt
+    margin-left: 2pt
+    background: white
     font-size: 12pt
     font-family: 'Cabin'
 
   .spacetime 
-    float: right
+    margin-top: 1pt
     .when::before  
       content: '\f073' 
+      color: #357;
     .where::before  
       content: '\f3c5' 
+      color: #573;
     .institution::before  
       content: '\f1ad' 
+      color: #753;
     *::before 
+      background: white
       line-height: 0
-      margin-top: -3pt
+      margin-top: -2.5pt
       margin-right: 2pt
       font-style: normal
 
-
   .spacetime > *
+    background: white;
     display: inline-block
-    margin: 0 0 0 8pt
+    padding: 0 0 0 8pt
+
+.item.noline .spacetime
+  background: white
+  flex-grow: 1
 
 .item .institution 
   font-style: italic
 
 .item .description 
   margin-top: 1pt
-
-.item .description p 
-  margin: 0 0 5pt 0
-  padding: 0
+  p
+    margin: 0 0 5pt 0
+    padding: 0
+    text-align: justify
+  strong, b
+    font-weight: 500
+  ul
+    margin-bottom: 4pt

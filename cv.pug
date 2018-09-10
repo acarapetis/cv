@@ -3,85 +3,152 @@
 title Anthony Carapetis - Curriculum Vitae
 style
   include:sass style.sass
+//-meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
 mixin section(title)
-  .section
-    .headline
-      h2= title
-    ul
-      block
+  .sectionwrapper
+    .section
+      .headline
+        h2= title
+      ul
+        block
 
 mixin item
-  li.item
-    .titleline
-      span.title #{attributes.title}
-      .spacetime
-        if attributes.when
-          .when= attributes.when
-        else if attributes.from
-          .when
-            | #{attributes.from}&mdash;
-            if attributes.to
-              | #{attributes.to}
-        if attributes.institution
-          .institution= attributes.institution
-        if attributes.where
-          .where= attributes.where
-    .description
-      block
+  li.itemwrapper
+    div(class=(attributes.noline ? 'noline item' : 'item'))
+      .titleline
+        span.title #{attributes.title}
+        .spacetime
+          if attributes.when
+            .when= attributes.when
+          else if attributes.from
+            .when
+              | #{attributes.from}&mdash;
+              if attributes.to
+                | #{attributes.to}
+          if attributes.institution
+            .institution= attributes.institution
+          if attributes.where
+            .where= attributes.where
+      .description
+        block
 
-#heading
-  #main
-    h1 Anthony Carapetis
-    h2 Curriculum Vitae
-  #contact
-    include private.pug
-    .email
-      a(href='mailto:anthony.carapetis@gmail.com') anthony.carapetis@gmail.com
-    .website
-      a(href='https://a.carapetis.com') a.carapetis.com
+.page
+  #heading
+    .main
+      h1 Anthony Carapetis
+      h2 Curriculum Vitae
+    .contact
+      include private.pug
+      .email
+        a(href='mailto:anthony.carapetis@gmail.com') anthony.carapetis@gmail.com
+      .website
+        a(href='https://a.carapetis.com') a.carapetis.com
 
-+section('Work History')
-  +item(title='Software Engineer',
-        when=2018,
-        institution='High Resolution Plant Phenomics Centre, CSIRO',
-        where='Canberra')
-    p TODO
-  +item(title='Casual Sessional Academic',
-        from=2015, to=2017,
-        institution='Australian National University',
-        where='Canberra')
-    p Teaching and marking for undergraduate classes in mathematics and astrophysics.
-  +item(title='Software Developer',
-        from=2006, to=2013,
-        institution='Unisolve Pty Ltd',
-        where='Melbourne')
-    :markdown-it
-      Design, development and maintenance of predominantly web-based software, along with administration of associated systems and databases.
+  +section('Work History')
+    +item(title='Software Engineer',
+          from='May', to='Nov 2018',
+          institution='CSIRO',
+          where='Canberra')
+      :markdown-it
+        A six month position at the *High Resolution Plant Phenomics Centre*, developing software devoted to integrating, visualizing and analysing data for agriculture and plant science.
+        My main focus is developing software infrastructure to support time series data gathered from sensor networks:
+          - Streamlined existing data ingest processes and improved query performance by moving to an **InfluxDB** storage solution, with several levels of time-based aggregation caching.
+          - Created a simple REST API to retrieve time series data on demand.
+          - Built a diagnostics dashboard and data visualization tools, integrated into an existing **PHP** web application. Used **JavaScript**, including the libraries **D3.js** and **Plotly.js** along with modern web standards (**SVG**, **CSS3** transitions, **ES6** modules, Fetch, Promises).   
 
-      I worked on various large web applications, mostly built in Perl/Apache/Linux, using frameworks and tools including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. Many of these applications were part of accounting and resource management systems for mid-sized companies, often requiring us to interface with much older proprietary software. Other projects were public-facing web applications, where my focus was more often on user experience, using modern Javascript UI and AJAX libraries to create interactive interfaces.
+        Some other responsibilities:
+          - Working on an internal **Java/Spring** application used to track the HRPPC's projects, users and data.
+          - Prototyping a web app to parse output files from photosynthesis systems, store the resulting datasets in a repository and run automated statistical analyses by integrating **R** scripts.
+          - Maintaining various other small forms, scripts and cronjobs, written in **Bash**, **Python** and other languages.
 
-      In most projects I worked on at Unisolve I was also involved in the backend development and administration required to support these applications, including design of databases and simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups. Thus I have extensive experience using shell scripts, cron jobs and daemons to automate systems.
+        For source control, project management and documentation, we use **git**, **Bitbucket**, **JIRA** and **Confluence**.
+    +item(title='Casual Sessional Academic',
+          from=2015, to=2017,
+          institution='Australian National University',
+          where='Canberra')
+      p Teaching and marking for undergraduate classes in mathematics and astrophysics.
+    +item(title='Software Developer',
+          from=2006, to=2013,
+          institution='Unisolve Pty Ltd',
+          where='Melbourne')
+      :markdown-it
+        Full-stack development of web-based software, along with administration of associated systems and databases.
 
-  +item(title='Sessional Teaching Associate',
-        when='2012',
-        institution='Monash University',
-        where='Melbourne')
-    p Teaching and marking for undergraduate engineering calculus.
-  +item(title='Web Developer (Contractor)',
-        from=2009, to=2010,
-        institution='Ramble Communications',
-        where='Melbourne')
-    p Front-end development and maintenance of small websites. Primarily required expertise in HTML, CSS and Javascript, with a small amount of PHP and Python.
+        I worked on various large web applications, mostly with backends built in **Perl** on top of **Apache** and **Linux**, using modern frameworks including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. They were typically backed by relational databases like **MySQL**, **PostgreSQL**, and **SQLite**, and regression-tested using `Test::More`.
 
-+section('Education')
-  +item(title='Doctor of Philosophy (Mathematics)',
-    from=2013, to=2018,
-    institution='Australian National University',
-    where='Canberra')
-  +item(title='Bachelor of Science Advanced (with Honours)',
-    from=2009, to=2012,
-    institution='Monash University',
-    where='Melbourne')
+        Many of these applications were part of accounting and resource management systems for mid-sized companies, interfacing with older proprietary software; so I became proficient in data wrangling.
 
-+section('To be continued...')
+        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups; thus I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
+
+        On the frontend, I used HTML, CSS and JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences, with automated tests built using **Selenium**.
+
+    +item(title='Sessional Teaching Associate',
+          when='2012',
+          institution='Monash University',
+          where='Melbourne')
+      p Teaching and marking for undergraduate engineering calculus.
+    +item(title='Web Developer (Contractor)',
+          from=2009, to=2010,
+          institution='Ramble Communications',
+          where='Melbourne')
+      p Front-end development and maintenance of small websites. 
+
+  +section('Education')
+    +item(title='Doctor of Philosophy (Mathematics)',
+      from=2013, to=2018,
+      institution='Australian National University',
+      where='Canberra')
+        :markdown-it
+          **PhD Thesis:** *Geometric Flows of Diffeomorphisms*, **Supervisor:** Ben Andrews  
+          Geometric flows hijack the physics of heat flow to study geometry: by making a mathematical analogy between "spikiness" and heat, we can deform poorly-understood spiky objects to simple smooth ones; and by understanding the mathematical properties of this deformation we can derive new knowledge about the spiky things we started with. In my thesis research, I applied this methodology to a previously unstudied class of flow. 
+
+.page
+  +section('Education (contd.)')
+    +item(title='Bachelor of Science Advanced (with Honours)',
+      from=2009, to=2012,
+      institution='Monash University',
+      where='Melbourne')
+        :markdown-it
+          **Majors:** Mathematics, Physics  
+          **Honours Thesis:** *The Riemannian Penrose Inequality and the Inverse Mean Curvature Flow*  
+          **Supervisor:** Gilbert Weinstein  
+          The universe should weigh at least as much as the biggest black hole it contains, but the mathematical embodiment of this fact (the Penrose Inequality) is remarkably difficult to derive from general relativity: it took until 1999 for even a special case to be proven. This thesis was an exposition of the problem and its solution intended for a slightly less expert audience.
+
+  +section('Other Skills')
+    +item(title='Some skills I have not mentioned above:',noline=true)
+      :markdown-it
+        - Applied numerical analysis/computational mathematics: during my thesis research, I combined numerical simulations of partial differential equations with my expertise in frontend web development to develop interactive visualizations of some geometric flows, which you can play with online at [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
+        - Hobbyist experience with various other programming languages, including **Ruby**, **C++**, and **Haskell**
+        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**
+
+  +section('Undergraduate Research')
+    +item(title='Summer Vacation Research Scholarship',
+      from=2011, to=2012,
+      institution='Monash University',
+      where='Melbourne')
+        :markdown-it
+          Reading project on the problem of minimal surfaces: if you dip a wonky loop of wire in a bucket of soapy water, what is the shape of the resulting bubble?
+    +item(title='Mathematics Research Project',
+      when=2011,
+      institution='Monash University',
+      where='Melbourne')
+        :markdown-it
+          Reading project in geometry, focusing on how the familiar relationships of lengths and angles change when we work on a curved surface (or in a curved space).
+    +item(title='Mathematics Research Project',
+      from=2010, to=2011,
+      institution='AMSI/Monash University',
+      where='Melbourne')
+        :markdown-it
+          Numerical investigation of *p*-adic zeta functions using the mathematical programming language PARI/GP. Culminated in a presentation at the CSIRO Big Day In.
+
+  .footer
+      | This document was typeset using HTML and CSS3. See 
+      a(href='https://github.com/acarapetis/cv') github.com/acarapetis/cv
+      |  for the source code.
+
+template#page-header
+  div.blank
+
+template#page-footer
+  div.blank
