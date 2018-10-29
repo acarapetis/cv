@@ -23,7 +23,7 @@ mixin item
             .when= attributes.when
           else if attributes.from
             .when
-              | #{attributes.from}&mdash;
+              | #{attributes.from}&ndash;
               if attributes.to
                 | #{attributes.to}
           if attributes.institution
@@ -44,6 +44,24 @@ mixin item
         a(href='mailto:anthony.carapetis@gmail.com') anthony.carapetis@gmail.com
       .website
         a(href='https://a.carapetis.com') a.carapetis.com
+        
+  +section('At a Glance')
+    .columns
+      .item
+        .titleline 
+          span.title Who I am
+        :markdown-it
+          - Professional software developer with emphasis on web development, data transformation and integration.
+          - Mathematics PhD in geometry and differential equations.
+          - Experienced in data visualization and graphic/web design.
+      .item
+        .titleline 
+          span.title My Toolbox
+        :markdown-it
+          - Perl, PHP, Java, Ruby, Python, C++
+          - HTML5, CSS3, Modern JavaScript
+          - MySQL, SQLite, PostgreSQL
+          - Linux, Git, Docker
 
   +section('Work History')
     +item(title='Software Engineer',
@@ -54,11 +72,11 @@ mixin item
         A six month position at the *High Resolution Plant Phenomics Centre*, developing software devoted to integrating, visualizing and analysing data for agriculture and plant science.
         My main focus is developing new software infrastructure to support time series data gathered from sensor networks:
           - Streamlined existing data ingest processes and improved query performance by moving to an **InfluxDB** storage solution, with several levels of time-based aggregation caching.
-          - Created a simple REST API to retrieve time series data on demand.
-          - Built a diagnostics dashboard and data visualization tools, integrated into an existing **PHP** web application. Used **JavaScript**, including the libraries **D3.js** and **Plotly.js** along with modern web standards (**SVG**, **CSS3** transitions, **ES6** modules, Fetch, Promises).   
+          - Developed a RESTful API to manage metadata and retrieve time series data
+          - Built a diagnostics dashboard and data visualization tools on top of this API, integrated into an existing **PHP** web application. Used **JavaScript**, including the libraries **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3** transitions, **ES6** modules, **Web Components**, etc.).
 
         I am also helping with other projects using various technologies:
-          - Languages: **PHP**, **Java**, **Python**, **Bash**, **R**
+          - Languages: **PHP**, **Java**, **Python**
           - Databases: **MariaDB**, **SQLite**
           - Containers: **Docker**
 
@@ -77,11 +95,11 @@ mixin item
 
         I worked on various large web applications, mostly with backends built in **Perl** on top of **Apache** and **Linux**, using modern frameworks including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. They were typically backed by relational databases like **MySQL**, **PostgreSQL**, and **SQLite**, and regression-tested using `Test::More`.
 
-        Many of these applications were part of accounting and resource management systems for mid-sized companies, interfacing with older proprietary software; so I became proficient in data wrangling.
+        Many of these applications were part of accounting and resource management systems for mid-sized companies, interfacing with older proprietary software; so I became proficient in data wrangling/**ETL**.
 
-        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups; thus I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
+        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups; so I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
 
-        On the frontend, I used HTML, CSS and JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences, with automated tests built using **Selenium**.
+        On the frontend, I used HTML, CSS and JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences.
 
     +item(title='Sessional Teaching Associate',
           when='2012',
@@ -94,17 +112,17 @@ mixin item
           where='Melbourne')
       p Front-end development and maintenance of small websites. 
 
+.page
   +section('Education')
     +item(title='Doctor of Philosophy (Mathematics)',
       from=2013, to=2018,
       institution='Australian National University',
       where='Canberra')
         :markdown-it
-          **PhD Thesis:** *Geometric Flows of Diffeomorphisms*, **Supervisor:** Ben Andrews  
+          **PhD Thesis:** *Geometric Flows of Diffeomorphisms*  
+          **Supervisor:** Ben Andrews  
           Geometric flows hijack the physics of heat flow to study geometry: by making a mathematical analogy between "spikiness" and heat, we can deform poorly-understood spiky objects to simple smooth ones; and by understanding the mathematical properties of this deformation we can derive new knowledge about the spiky things we started with. In my thesis research, I applied this methodology to a previously unstudied class of flow. 
 
-.page
-  +section('Education (contd.)')
     +item(title='Bachelor of Science Advanced (with Honours)',
       from=2009, to=2012,
       institution='Monash University',
@@ -115,33 +133,32 @@ mixin item
           **Supervisor:** Gilbert Weinstein  
           The universe should weigh at least as much as the biggest black hole it contains, but the mathematical embodiment of this fact (the Penrose Inequality) is remarkably difficult to derive from general relativity: it took until 1999 for even a special case to be proven. This thesis was an exposition of the problem and its solution intended for a slightly less expert audience.
 
-  +section('Other Skills')
-    +item(title='Some skills I have not mentioned above:',noline=true)
-      :markdown-it
-        - Applied numerical analysis/computational mathematics: during my thesis research, I combined numerical simulations of partial differential equations with my expertise in frontend web development to develop interactive visualizations of some geometric flows, which you can play with online at [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
-        - Hobbyist experience with various other programming languages, including **Ruby**, **C++**, and **Haskell**
-        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**
-        - In addition to **Git**, I have limited experience with other source control tools including **Subversion** and **CVS**.
-
   +section('Undergraduate Research')
     +item(title='Summer Vacation Research Scholarship',
       from=2011, to=2012,
       institution='Monash University',
       where='Melbourne')
         :markdown-it
-          Reading project on the problem of minimal surfaces: if you dip a wonky loop of wire in a bucket of soapy water, what is the shape of the resulting bubble?
+          Reading project on the problem of *minimal surfaces*: if you dip a wonky loop of wire in a bucket of soapy water, what is the shape of the resulting bubble? The techniques developed to study this problem are now ubiquitous in physics and geometry.
     +item(title='Mathematics Research Project',
       when=2011,
       institution='Monash University',
       where='Melbourne')
         :markdown-it
-          Reading project in geometry, focusing on how the familiar relationships of lengths and angles change when we work on a curved surface (or in a curved space).
+          Reading project in *comparison geometry*, the quantitative study of how the familiar relationships of lengths and angles change when we work on a curved surface (or in a curved space).
     +item(title='Mathematics Research Project',
       from=2010, to=2011,
       institution='AMSI/Monash University',
       where='Melbourne')
         :markdown-it
           Numerical investigation of *p*-adic zeta functions using the mathematical programming language PARI/GP. Culminated in a presentation at the CSIRO Big Day In.
+
+  +section('Other Experience')
+    +item(title="Some things don't come from work or school.",noline=true)
+      :markdown-it
+        - Computational Mathematics/Visualization: as spin-off from my thesis research, I combined numerical simulations of partial differential equations with my expertise in frontend web development to develop interactive visualizations of some geometric flows, which you can play with online at [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
+        - My professional history has been concentrated on a few languages, but I have hobbyist experience with many others, including **Ruby**, **C++**, and **Haskell**
+        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**
 
   .footer
       | This document was typeset using HTML and CSS3. See 
