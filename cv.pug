@@ -65,22 +65,24 @@ mixin item
 
   +section('Work History')
     +item(title='Software Engineer',
-          from='May', to='Nov 2018',
+          from='Jan 2018',
+          institution='Aurec, under contract to Geoscience Australia',
+          where='Canberra')
+      :markdown-it
+        TODO
+    +item(title='Software Engineer',
+          from='May', to='Jan 2018',
           institution='CSIRO',
           where='Canberra')
       :markdown-it
-        A six month position at the *High Resolution Plant Phenomics Centre*, developing software devoted to integrating, visualizing and analysing data for agriculture and plant science.
-        My main focus has been developing new software infrastructure to support time series data gathered from sensor networks:
-          - Streamlined existing data ingest processes and improved query performance by moving to an **InfluxDB** storage solution, with several levels of time-based aggregation caching.
-          - Built a RESTful API to manage metadata and retrieve time series data
-          - Designed and developed a diagnostics dashboard and data visualization tools on top of this API, integrated into an existing **PHP** web application. Used **JavaScript**, including the libraries **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3** transitions, **ES6** modules, **Web Components**, etc.).
+        A six month position at the *High Resolution Plant Phenomics Centre*, developing software devoted to integrating and visualizing data for agriculture and plant science.
+        My main focus was developing new software infrastructure to support time series data gathered from sensor networks:
+          - Streamlined data ingest processes and set up a new storage and aggregation solution using **InfluxDB**.
+          - Built a RESTful API to manage and retrieve time series data and metadata.
+          - Designed and developed a web dashboard on top of this API to provide diagnostics and basic data visualization. Used **JavaScript**, including the visualization libraries **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3** transitions, **ES6** modules, **Web Components**, etc.).
 
-        I am also helping with other projects using various technologies:
-          - Languages: **PHP**, **Java**, **Python**
-          - Databases: **MariaDB**, **SQLite**
-          - Containers: **Docker**
-
-        For source control, project management and documentation, we use **Git**, **Bitbucket**, **JIRA** and **Confluence**.
+        This work was integrated into an existing web application built on a **Linux**+**Apache**+**SQLite**+**PHP** stack.
+        I also contributed to the development of other projects, including an internal business database built in **Java**/**Spring** and deployed using **Docker**.
     +item(title='Casual Sessional Academic',
           from=2015, to=2017,
           institution='Australian National University',
@@ -93,13 +95,12 @@ mixin item
       :markdown-it
         Full-stack development of web-based software, along with administration of associated systems and databases.
 
-        I worked on various large web applications, mostly with backends built in **Perl** on top of **Apache** and **Linux**, using modern frameworks including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. They were typically backed by relational databases like **MySQL**, **PostgreSQL**, and **SQLite**, and regression-tested using `Test::More`.
+        I worked on various large web applications, mostly built in **Linux**+**Apache**+**Perl**, using modern libraries including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. They were typically backed by relational databases like **MySQL**, **PostgreSQL**, and **SQLite**, and regression-tested using `Test::More`.  On the frontend, I used JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences.
 
         Many of these applications were part of accounting and resource management systems for mid-sized companies, interfacing with older proprietary software; so I became proficient in data wrangling/**ETL**.
 
-        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and thoroughly testing automated backups; so I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
+        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and implementing automated backups; so I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
 
-        On the frontend, I used HTML, CSS and JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences.
 
     +item(title='Sessional Teaching Associate',
           when='2012',
