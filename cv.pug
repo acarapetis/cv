@@ -1,37 +1,10 @@
-//- vim: ft=pug sw=2 ts=2 et
+//- vim: ft=pug sw=2 ts=2 et tw=100 cc=101
+include mixins.pug
 
 title Anthony Carapetis - Curriculum Vitae
 style
   include:sass style.sass
 //-meta(name='viewport', content='width=device-width, initial-scale=1.0')
-
-mixin section(title)
-  .sectionwrapper
-    .section
-      .headline
-        h2= title
-      ul
-        block
-
-mixin item
-  li.itemwrapper
-    div(class=(attributes.noline ? 'noline item' : 'item'))
-      .titleline
-        span.title #{attributes.title}
-        .spacetime
-          if attributes.when
-            .when= attributes.when
-          else if attributes.from
-            .when
-              | #{attributes.from}&ndash;
-              if attributes.to
-                | #{attributes.to}
-          if attributes.institution
-            .institution= attributes.institution
-          if attributes.where
-            .where= attributes.where
-      .description
-        block
 
 .page
   #heading
@@ -51,67 +24,97 @@ mixin item
         .titleline 
           span.title Who I am
         :markdown-it
-          - Professional software developer with emphasis on web development, data transformation and integration.
+          - Software developer with emphasis on web technologies, data manipulation and systems
+          integration.
           - Mathematics PhD in geometry and differential equations.
-          - Experienced in data visualization and graphic/web design.
+          - Interested in simulation and modelling.
       .item
         .titleline 
           span.title My Toolbox
         :markdown-it
-          - Perl, PHP, Java, Ruby, Python, C++
-          - HTML5, CSS3, Modern JavaScript
+          - Python, Perl, JavaScript/ES6+, Java
+          - HTML5, CSS3, Browser APIs
           - MySQL, SQLite, PostgreSQL
-          - Linux, Git, Docker
+          - Linux, AWS, Terraform, Docker, Git
 
   +section('Work History')
-    +item(title='Software Engineer',
-          from='Jan 2018',
-          institution='Aurec, under contract to Geoscience Australia',
+    +item(title='Software Developer',
+          from='Jan 2019',
+          contract=true,
+          institution='Geoscience Australia',
           where='Canberra')
       :markdown-it
-        TODO
+        I'm working with the National Earthquake Alerts Centre to develop and maintain automated
+        software systems responsible for gathering, storing and disseminating information
+        associated with seismic events. I am:
+
+          - Maintaining and extending the existing earthquake alerts and analysis system, 
+            which is a mix of proprietary and bespoke software deployed on **AWS** using 
+            **Terraform**. This includes the integration of new modelling and analysis software 
+            into our automated workflow, allowing the centre to provide near-real-time estimates of 
+            earthquake parameters and effects.
+          - Architecting and developing a solution for storing earthquake-related data products 
+            of all kinds &mdash; from raw seismograph data through to news articles &mdash; and
+            tracking the relationships between them. I'm building this system using **Python** on
+            **AWS**, with geospatial indexing powered by **PostGIS** and infrastructure provisioned
+            using **Terraform**.
+
     +item(title='Software Engineer',
-          from='May', to='Jan 2018',
+          from='May', to='Dec 2018',
           institution='CSIRO',
           where='Canberra')
       :markdown-it
-        A six month position at the *High Resolution Plant Phenomics Centre*, developing software devoted to integrating and visualizing data for agriculture and plant science.
-        My main focus was developing new software infrastructure to support time series data gathered from sensor networks:
-          - Streamlined data ingest processes and set up a new storage and aggregation solution using **InfluxDB**.
+        A fixed-term position at the *High Resolution Plant Phenomics Centre*, developing software
+        devoted to integrating and visualizing data for agriculture and plant science.
+        My main focus was developing new software infrastructure to support time series data
+        gathered from sensor networks:
+          - Streamlined data ingest processes and set up a new storage and aggregation solution
+          using **InfluxDB**.
           - Built a RESTful API to manage and retrieve time series data and metadata.
-          - Designed and developed a web dashboard on top of this API to provide diagnostics and basic data visualization. Used **JavaScript**, including the visualization libraries **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3** transitions, **ES6** modules, **Web Components**, etc.).
+          - Designed and developed a web dashboard on top of this API to provide diagnostics and
+          basic data visualization. Used **JavaScript**, including the visualization libraries
+          **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3**
+          transitions, **ES** modules, **Web Components**, etc.).
 
-        This work was integrated into an existing web application built on a **Linux**+**Apache**+**SQLite**+**PHP** stack.
-        I also contributed to the development of other projects, including an internal business database built in **Java**/**Spring** and deployed using **Docker**.
-    +item(title='Casual Sessional Academic',
+        This work was integrated into an existing web application built on a
+        **Linux**+**Apache**+**SQLite**+**PHP** stack.
+        I also contributed to the development of other projects, including an internal business
+        database built in **Java**/**Spring** and deployed using **Docker**.
+
+    +item(title='Casual Sessional Teacher',
           from=2015, to=2017,
           institution='Australian National University',
           where='Canberra')
       p Teaching and marking for undergraduate classes in mathematics and astrophysics.
+
     +item(title='Software Developer',
           from=2006, to=2013,
           institution='Unisolve Pty Ltd',
           where='Melbourne')
       :markdown-it
-        Full-stack development of web-based software, along with administration of associated systems and databases.
+        Full-stack development of web-based software, along with administration of associated
+        systems and databases.
 
-        I worked on various large web applications, mostly built in **Linux**+**Apache**+**Perl**, using modern libraries including `Mason`, `DBIx::Class`, `Moose` and `Dancer`. They were typically backed by relational databases like **MySQL**, **PostgreSQL**, and **SQLite**, and regression-tested using `Test::More`.  On the frontend, I used JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive use of AJAX) to create interactive user experiences.
+        I worked on various large web applications, mostly built in **Linux**+**Apache**+**Perl**,
+        using modern web frameworks and backed by relational databases. On the frontend, I used 
+        JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive 
+        use of AJAX) to create interactive user experiences.
 
-        Many of these applications were part of accounting and resource management systems for mid-sized companies, interfacing with older proprietary software; so I became proficient in data wrangling/**ETL**.
+        Many of these applications were part of accounting and resource management systems for
+        mid-sized companies, interfacing with older proprietary software; so I became proficient in
+        data wrangling/**ETL**.
 
-        I was also involved in developing simple deployment architecture, writing scheduled processes to carry out heavier business logic and reporting tasks, and implementing automated backups; so I have extensive experience using shell scripts, cron jobs and daemons to automate systems.  
+        I was also involved in developing simple deployment architecture, writing scheduled
+        processes to carry out heavier business logic and reporting tasks, and implementing
+        automated backups; so I have extensive experience using shell scripts, cron jobs and daemons
+        to automate systems.  
 
 
-    +item(title='Sessional Teaching Associate',
+    +item(title='Casual Sessional Teacher',
           when='2012',
           institution='Monash University',
           where='Melbourne')
       p Teaching and marking for undergraduate engineering calculus.
-    +item(title='Web Developer (Contractor)',
-          from=2009, to=2010,
-          institution='Ramble Communications',
-          where='Melbourne')
-      p Front-end development and maintenance of small websites. 
 
 .page
   +section('Education')
@@ -120,9 +123,14 @@ mixin item
       institution='Australian National University',
       where='Canberra')
         :markdown-it
-          **PhD Thesis:** [*Geometric Flows of Diffeomorphisms*](https://openresearch-repository.anu.edu.au/handle/1885/142453)  
+          **PhD Thesis:** 
+          [*Geometric Flows of Diffeomorphisms*](https://openresearch-repository.anu.edu.au/handle/1885/142453)  
           **Supervisor:** Ben Andrews  
-          Geometric flows hijack the physics of heat flow to study geometry: by making a mathematical analogy between "spikiness" and heat, we can deform poorly-understood spiky objects to simple smooth ones; and by understanding the mathematical properties of this deformation we can derive new knowledge about the spiky things we started with. In my thesis research, I applied this methodology to a previously unstudied class of flow. 
+          Geometric flows hijack the physics of heat flow to study geometry: by making a
+          mathematical analogy between "spikiness" and heat, we can deform poorly-understood spiky
+          objects to simple smooth ones; and by understanding the mathematical properties of this
+          deformation we can derive new knowledge about the spiky things we started with. In my
+          thesis research, I applied this methodology to a previously unstudied class of flow. 
 
     +item(title='Bachelor of Science Advanced (with Honours)',
       from=2009, to=2012,
@@ -132,7 +140,11 @@ mixin item
           **Majors:** Mathematics, Physics  
           **Honours Thesis:** *The Riemannian Penrose Inequality and the Inverse Mean Curvature Flow*  
           **Supervisor:** Gilbert Weinstein  
-          The universe should weigh at least as much as the biggest black hole it contains, but the mathematical embodiment of this fact (the Penrose Inequality) is remarkably difficult to derive from general relativity: it took until 1999 for even a special case to be proven. This thesis was an exposition of the problem and its solution intended for a slightly less expert audience.
+          The universe should weigh at least as much as the biggest black hole it contains, but the
+          mathematical embodiment of this fact (the Penrose Inequality) is remarkably difficult to
+          derive from general relativity: it took until 1999 for even a special case to be proven.
+          This thesis was an exposition of the problem and its solution intended for a slightly less
+          expert audience.
 
   +section('Undergraduate Research')
     +item(title='Summer Vacation Research Scholarship',
@@ -140,26 +152,39 @@ mixin item
       institution='Monash University',
       where='Melbourne')
         :markdown-it
-          Reading project on the problem of *minimal surfaces*: if you dip a wonky loop of wire in a bucket of soapy water, what is the shape of the resulting bubble? The techniques developed to study this problem are now ubiquitous in physics and geometry.
+          Reading project on the problem of *minimal surfaces*: if you dip a wonky loop of wire in a
+          bucket of soapy water, what is the shape of the resulting bubble? The techniques developed
+          to study this problem are now ubiquitous in physics and geometry.
+
     +item(title='Mathematics Research Project',
       when=2011,
       institution='Monash University',
       where='Melbourne')
         :markdown-it
-          Reading project in *comparison geometry*, the quantitative study of how the familiar relationships of lengths and angles change when we work on a curved surface (or in a curved space).
+          Reading project in *comparison geometry*, the quantitative study of how the familiar
+          relationships of lengths and angles change when we work on a curved surface (or in a
+          curved space).
+
     +item(title='Mathematics Research Project',
       from=2010, to=2011,
       institution='AMSI/Monash University',
       where='Melbourne')
         :markdown-it
-          Numerical investigation of *p*-adic zeta functions using the mathematical programming language PARI/GP. Culminated in a presentation at the CSIRO Big Day In.
+          Numerical investigation of *p*-adic zeta functions using the mathematical programming
+          language PARI/GP. Culminated in a presentation at the CSIRO Big Day In.
 
   +section('Other Experience')
     +item(title="Some things don't come from work or school.",noline=true)
       :markdown-it
-        - Computational Mathematics/Visualization: as a spin-off from my thesis research, I combined numerical simulations of partial differential equations with my expertise in frontend web development to develop interactive visualizations of some geometric flows, which you can play with online at [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
-        - My professional history has been concentrated on a few languages, but I have hobbyist experience with many others, including **Ruby**, **C++**, and **Haskell**
-        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**
+        - Computational Mathematics/Visualization: as a spin-off from my thesis research, I combined
+        numerical simulations of partial differential equations with my expertise in frontend web
+        development to develop interactive visualizations of some geometric flows, which you can
+        play with online at 
+        [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and 
+        [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
+        - My professional history has been concentrated on a few languages, but I have hobbyist
+        experience with many others, including **Ruby**, **C++**, **TypeScript** and **Haskell**.
+        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**.
 
   .footer
       | This document was typeset using HTML and CSS3. See 
