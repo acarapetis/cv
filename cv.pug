@@ -24,10 +24,10 @@ style
         .titleline 
           span.title Who I am
         :markdown-it
-          - Software developer with emphasis on web technologies, data manipulation and systems
-          integration.
-          - Mathematics PhD in geometry and differential equations.
-          - Interested in simulation and modelling.
+          - Software developer with deep experience in web technologies, &nbsp; data manipulation and
+            software systems integration.
+          - Mathematics PhD in geometry and differential equations. Also experienced in numerical
+            simulation and modelling.
       .item
         .titleline 
           span.title My Toolbox
@@ -38,43 +38,46 @@ style
           - Linux, AWS, Terraform, Docker, Git
 
   +section('Work History')
-    +item(title='Software Developer',
+    +item(title='Software Engineer',
           from='Jan 2019',
           contract=true,
           institution='Geoscience Australia',
           where='Canberra')
       :markdown-it
-        I'm working with the National Earthquake Alerts Centre to develop and maintain automated
-        software systems responsible for gathering, storing and disseminating information
-        associated with seismic events. I am:
+        As the lead developer for the National Earthquake Alerts Centre, I am responsible for
+        software systems that produce, store and disseminate information associated with earthquakes
+        and other seismic events. I have:
 
-          - Maintaining and extending the existing earthquake alerts and analysis system, which is a
-            mix of open-source, proprietary and bespoke software deployed on **AWS** using
-            **Terraform**. This includes the integration of new modelling and analysis software into
-            our automated workflow, allowing the centre to provide near-real-time estimates of
-            earthquake parameters and effects.
-          - Architecting and developing a solution for storing earthquake-related data products 
-            of all kinds &mdash; from raw seismograph data through to news articles &mdash; and
-            tracking the relationships between them. I'm building this system using **Python** on
-            **AWS**, with geospatial indexing powered by **PostGIS** and infrastructure provisioned
-            using **Terraform**.
+          - Continuously maintained and enhanced the earthquake alerts and analysis system, which is
+            a mix of open-source, proprietary and bespoke software deployed on **AWS** using
+            **Terraform**. 
+          - Developed pipelines to ingest, transform and integrate various data sources.
+          - Architected and developed a custom data catalogue for the storage, quality control, and
+            dissemination of earthquake-related data products of all kinds &mdash; from raw
+            seismograms through to news articles.  I built this system using **Python** on
+            **AWS**, with geospatial indexing powered by **PostGIS**, with an interactive 
+            frontend built on Web Components.
+          - Integrated the USGS ShakeMap modelling software into our automated workflow, allowing
+            the Centre to rapidly estimate and visualize the areas most effected by an earthquake.
+            This included a lot of custom configuration and the addition of several new features,
+            which I contributed back to the USGS repository.
 
     +item(title='Software Engineer',
           from='May', to='Dec 2018',
           institution='CSIRO',
           where='Canberra')
       :markdown-it
-        A fixed-term position at the *High Resolution Plant Phenomics Centre*, developing software
-        devoted to integrating and visualizing data for agriculture and plant science.
-        My main focus was developing new software infrastructure to support time series data
-        gathered from sensor networks:
+        A fixed-term position at the *High Resolution Plant Phenomics Centre* developing software
+        for agriculture and plant science.
+        My main focus was developing infrastructure to exploit time series data gathered from sensor
+        networks:
           - Streamlined data ingest processes and set up a new storage and aggregation solution
-          using **InfluxDB**.
-          - Built a RESTful API to manage and retrieve time series data and metadata.
+            using **InfluxDB**.
+          - Built a REST API to manage and retrieve time series data and metadata.
           - Designed and developed a web dashboard on top of this API to provide diagnostics and
-          basic data visualization. Used **JavaScript**, including the visualization libraries
-          **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**, **CSS3**
-          transitions, **ES** modules, **Web Components**, etc.).
+            basic data visualization. Used **JavaScript**, including the visualization libraries
+            **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**,
+            **CSS3** transitions, **ES** modules, **Web Components**, etc.).
 
         This work was integrated into an existing web application built on a
         **Linux**+**Apache**+**SQLite**+**PHP** stack.
@@ -92,31 +95,27 @@ style
           institution='Unisolve Pty Ltd',
           where='Melbourne')
       :markdown-it
-        Full-stack development of web-based software, along with administration of associated
-        systems and databases.
+        Design and full-stack development of web applications for various clients, along with
+        administration of associated systems and databases.
 
-        I worked on various large web applications, mostly built in **Linux**+**Apache**+**Perl**,
-        using modern web frameworks and backed by relational databases. On the frontend, I used 
-        JavaScript (including libraries like **jQuery** and **Sencha**/**ExtJS** and the extensive 
-        use of AJAX) to create interactive user experiences.
+        I worked on various large web applications, mostly built on **Linux**+**Apache**+**Perl**
+        and backed by **MySQL** or **PostgreSQL**. On the frontend, I used JavaScript to create
+        interactive user experiences.  Many of these applications were part of accounting and
+        resource management systems that interfaced with older proprietary software; so I became
+        proficient in systems integration and data munging/wrangling/ETL.
 
-        Many of these applications were part of accounting and resource management systems for
-        mid-sized companies, interfacing with older proprietary software; so I became proficient in
-        data wrangling/**ETL**.
+        I was also involved in developing simple deployment architecture, scheduled
+        processing/reporting tasks, and automated backups; so I have extensive experience using
+        shell scripts, cron jobs and daemons to automate systems.
 
-        I was also involved in developing simple deployment architecture, writing scheduled
-        processes to carry out heavier business logic and reporting tasks, and implementing
-        automated backups; so I have extensive experience using shell scripts, cron jobs and daemons
-        to automate systems.  
-
-
+.page
+  +section('Work History (Continued)')
     +item(title='Casual Sessional Teacher',
           when='2012',
           institution='Monash University',
           where='Melbourne')
       p Teaching and marking for undergraduate engineering calculus.
 
-.page
   +section('Education')
     +item(title='Doctor of Philosophy (Mathematics)',
       from=2013, to=2018,
