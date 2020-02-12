@@ -1,0 +1,29 @@
+{
+  "name": "acarapetis-cv",
+  "version": "0.1.0",
+  "description": "my cv",
+  "main": "index.js",
+  "scripts": {
+    "build": "relaxed --build-once cv.pug",
+    "start": "relaxed cv.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acarapetis/cv.git"
+  },
+  "keywords": [
+    "cv",
+    "relaxed"
+  ],
+  "author": "Anthony Carapetis",
+  "bugs": {
+    "url": "https://github.com/acarapetis/cv/issues"
+  },
+  "homepage": "https://github.com/acarapetis/cv#readme",
+  "public": false,
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.1.0",
+    "jstransformer-sass": "^1.0.0",
+    "relaxedjs": "^0.2.4"
+  }
+}

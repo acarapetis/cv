@@ -1,6 +1,4 @@
 # CV
-This is my CV, intended to be compiled to pdf using [ReLaXed](https://github.com/RelaxedJS/ReLaXed), like so:
+This is my CV, intended to be compiled to pdf using [ReLaXed](https://github.com/RelaxedJS/ReLaXed).
 
-    npm install jstransformer-sass jstransformer-markdown-it
-    npm install -g relaxedjs
-    relaxed cv.pug --build-once
+After running `npm install`, run `npm start` to start the development server, which will recompile cv.pdf every time cv.pug changes. To compile the PDF as a once-off, use `npm run-script build`.
