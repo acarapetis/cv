@@ -12,16 +12,17 @@ style
       h1 Anthony Carapetis
       h2 Curriculum Vitae
     .contact
+      //- put private contact details in private.pug:
       include private.pug
       .email
         a(href='mailto:anthony.carapetis@gmail.com') anthony.carapetis@gmail.com
       .website
         a(href='https://a.carapetis.com') a.carapetis.com
-        
+
   +section('At a Glance')
     .columns
       .item
-        .titleline 
+        .titleline
           span.title Who I am
         :markdown-it
           - Software developer with deep experience in web technologies, &nbsp; data manipulation and
@@ -29,10 +30,10 @@ style
           - Mathematics PhD in geometry and differential equations. Also experienced in numerical
             simulation and modelling.
       .item
-        .titleline 
+        .titleline
           span.title My Toolbox
         :markdown-it
-          - Python, Perl, JavaScript/ES6+, Java
+          - Python, JavaScript/ES6+, Perl, Java
           - HTML5, CSS3, Browser APIs
           - MySQL, SQLite, PostgreSQL
           - Linux, AWS, Terraform, Docker, Git
@@ -50,17 +51,20 @@ style
 
           - Continuously maintained and enhanced the earthquake alerts and analysis system, which is
             a mix of open-source, proprietary and bespoke software deployed on **AWS** using
-            **Terraform**. 
-          - Developed pipelines to ingest, transform and integrate various data sources.
+            **Terraform**.
           - Architected and developed a custom data catalogue for the storage, quality control, and
             dissemination of earthquake-related data products of all kinds &mdash; from raw
             seismograms through to news articles.  I built this system using **Python** on
-            **AWS**, with geospatial indexing powered by **PostGIS**, with an interactive 
+            **AWS**, with geospatial indexing powered by **PostgreSQL/PostGIS** and an interactive
             frontend built on Web Components.
-          - Integrated the USGS ShakeMap modelling software into our automated workflow, allowing
-            the Centre to rapidly estimate and visualize the areas most effected by an earthquake.
-            This included a lot of custom configuration and the addition of several new features,
-            which I contributed back to the USGS repository.
+          - Integrated the USGS ShakeMap modelling software into our semi-automated workflow,
+            allowing the Centre to rapidly estimate and visualize the areas most effected by an
+            earthquake.  I worked with geoscientists to tailor the configuration to Australian
+            seismology, and added several new features to the ShakeMap software to meet our
+            requirements, which I subsequently contributed back to the USGS repository.
+          - Developed pipelines to ingest, transform and integrate various data sources.
+          - Performed statistical and geospatial data analysis to support reporting and decision
+            making by the NEAC's operations and science leadership.
 
     +item(title='Software Engineer',
           from='May', to='Dec 2018',
@@ -71,51 +75,54 @@ style
         for agriculture and plant science.
         My main focus was developing infrastructure to exploit time series data gathered from sensor
         networks:
-          - Streamlined data ingest processes and set up a new storage and aggregation solution
+
+          - Reworked data ingest processes and set up a new storage and aggregation solution
             using **InfluxDB**.
-          - Built a REST API to manage and retrieve time series data and metadata.
+          - Implemented a HTTP API to manage and retrieve time series data and metadata.
           - Designed and developed a web dashboard on top of this API to provide diagnostics and
             basic data visualization. Used **JavaScript**, including the visualization libraries
             **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**,
             **CSS3** transitions, **ES** modules, **Web Components**, etc.).
 
-        This work was integrated into an existing web application built on a
+        Most of this work was integrated into an existing web application built on a
         **Linux**+**Apache**+**SQLite**+**PHP** stack.
-        I also contributed to the development of other projects, including an internal business
-        database built in **Java**/**Spring** and deployed using **Docker**.
+        I also contributed to other projects, including a REST microservice built in
+        **Java**/**Spring** and deployed using **Docker**.
 
     +item(title='Casual Sessional Teacher',
           from=2015, to=2017,
           institution='Australian National University',
           where='Canberra')
-      p Teaching and marking for undergraduate classes in mathematics and astrophysics.
+        :markdown-it
+          Teaching and marking for undergraduate classes in:
+          *Introduction to Mathematical Thinking*,
+          *Advanced Mathematics and Applications*,
+          *Black Holes and Cosmology*
 
     +item(title='Software Developer',
           from=2006, to=2013,
           institution='Unisolve Pty Ltd',
           where='Melbourne')
       :markdown-it
-        Design and full-stack development of web applications for various clients, along with
-        administration of associated systems and databases.
+        Design and full-stack development of web applications & administration of associated
+        systems and databases.
 
-        I worked on various large web applications, mostly built on **Linux**+**Apache**+**Perl**
-        and backed by **MySQL** or **PostgreSQL**. On the frontend, I used JavaScript to create
-        interactive user experiences.  Many of these applications were part of accounting and
-        resource management systems that interfaced with older proprietary software; so I became
-        proficient in systems integration and data munging/wrangling/ETL.
+        I worked on various large web applications, mostly built on **Linux**+**Apache**+**Perl** and backed by
+        **MySQL** or **PostgreSQL**. The tools we used changed over the years, but **DBIx::Class**
+        and **HTML::Mason** were mainstays.  On the frontend, I used JavaScript to create
+        interactive user experiences.
 
-        I was also involved in developing simple deployment architecture, scheduled
-        processing/reporting tasks, and automated backups; so I have extensive experience using
-        shell scripts, cron jobs and daemons to automate systems.
+        Many of these applications were business systems systems that interfaced with older
+        proprietary software; so I became proficient in systems integration and data
+        munging/wrangling/ETL.
+
+        I was also involved in developing simple deployment architecture and scheduled
+        processing/reporting/backup tasks; so I have extensive experience using shell scripts, cron
+        jobs and daemons to automate systems.
+
+  //-+section('Work History (Continued)')
 
 .page
-  +section('Work History (Continued)')
-    +item(title='Casual Sessional Teacher',
-          when='2012',
-          institution='Monash University',
-          where='Melbourne')
-      p Teaching and marking for undergraduate engineering calculus.
-
   +section('Education')
     +item(title='Doctor of Philosophy (Mathematics)',
       from=2013, to=2018,
@@ -125,11 +132,12 @@ style
           **PhD Thesis:** 
           [*Geometric Flows of Diffeomorphisms*](https://openresearch-repository.anu.edu.au/handle/1885/142453)  
           **Supervisor:** Ben Andrews  
-          Geometric flows hijack the physics of heat flow to study geometry: by making a
-          mathematical analogy between "spikiness" and heat, we can deform poorly-understood spiky
-          objects to simple smooth ones; and by understanding the mathematical properties of this
-          deformation we can derive new knowledge about the spiky things we started with. In my
-          thesis research, I applied this methodology to a previously unstudied class of flow. 
+          Geometric flows hijack what we know about the physics of heat flow to study geometry: by
+          making a mathematical analogy between "spikiness" and heat, we can deform
+          poorly-understood spiky objects to simple smooth ones; and by understanding the
+          mathematical properties of this deformation we can derive new knowledge about the spiky
+          things we started with. In my thesis research, I applied this methodology to a previously
+          unstudied class of flow. 
 
     +item(title='Bachelor of Science Advanced (with Honours)',
       from=2009, to=2012,
@@ -175,20 +183,23 @@ style
   +section('Other Experience')
     +item(title="Some things don't come from work or school.",noline=true)
       :markdown-it
-        - Computational Mathematics/Visualization: as a spin-off from my thesis research, I combined
+        - Interactive Media: as a spin-off from my thesis research, I combined
         numerical simulations of partial differential equations with my expertise in frontend web
         development to develop interactive visualizations of some geometric flows, which you can
         play with online at 
-        [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**JavaScript** + **Canvas**) and 
+        [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**TypeScript** + **Canvas**) and 
         [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
         - My professional history has been concentrated on a few languages, but I have hobbyist
         experience with many others, including **Ruby**, **C++**, **TypeScript** and **Haskell**.
-        - Graphic design (free and small freelance projects) using **Inkscape** and **GIMP**.
+        - Graphic design (hobbyist, volunteer and freelance projects) using **Inkscape** and
+        **GIMP**.
 
   .footer
-      | This document was typeset using HTML and CSS3. See 
-      a(href='https://github.com/acarapetis/cv') github.com/acarapetis/cv
-      |  for the source code.
+    p I designed this document from scratch and typeset it using HTML and CSS3.
+    p
+      | See 
+      a(href='https://github.com/acarapetis/cv') github.com/acarapetis/cv 
+      | for the source code.
 
 template#page-header
   div.blank
