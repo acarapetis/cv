@@ -1,0 +1,4 @@
+*.pdf
+build/
+node_modules/
+private.pug
