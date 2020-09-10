@@ -16,6 +16,7 @@ jobs:
           npm run build
           mkdir build
           mv cv.pdf build/
+          echo '<a href=cv.pdf>View my CV</a>' > build/index.html
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
