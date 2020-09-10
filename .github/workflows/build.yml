@@ -1,0 +1,26 @@
+name: build
+on: push
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use NodeJS 12
+        uses: actions/setup-node@v1
+        with:
+            node-version: 12
+      - name: Build PDF
+        run: |
+          npm ci
+          npm run build
+          mkdir build
+          mv cv.pdf build/
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
