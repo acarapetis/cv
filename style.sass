@@ -244,10 +244,12 @@ code
   .item, .columns .item
     padding-right: 5mm
 
-// strictly on small phones, remove left-side padding
+// strictly on small phones, remove left-side padding and border
 @media only screen and (max-width: 480px)
   .sectionwrapper
     margin: 0 -5mm
+  .section
+    border-left-width: 0
 
 @page
   size: A4 portrait
