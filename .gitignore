@@ -1,4 +1,6 @@
 *.pdf
+*.html
+*.htm
 build/
 node_modules/
 private.pug

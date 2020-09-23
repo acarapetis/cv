@@ -21,13 +21,16 @@ body
 
 @media only screen
   body
-    padding: 2em 2em 0 2em
+    padding: 2em 0 0 0
+    font-size: 12pt
   .page
-    max-width: 70em
+    max-width: 230mm
     margin: 0 auto
     padding: 0 15mm
   .footer
     background: none
+  .view-as-pdf
+    margin: 1em 1em 0 1em
 
 @media only print
   .page
@@ -39,7 +42,7 @@ body
     position: absolute
     bottom: 0mm
     left: 0mm
-  .hide-in-pdf
+  .view-as-pdf
     display: none
 
 a
@@ -208,6 +211,7 @@ code
 .columns
   display: flex
   flex-direction: row
+  flex-wrap: none
   margin: 8pt 0
   padding: 0
   .item
@@ -220,6 +224,30 @@ code
 
 .columns > :first-child
   border-right: 1pt dashed black
+
+// on phones and small tablets,
+// split column view and decrease padding
+@media only screen and (max-width: 640px)
+  .columns
+    flex-direction: column
+    .item
+      margin-bottom: 1em
+  .columns > :first-child
+    border-right: none
+  .page
+    padding: 0 5mm
+  .item .titleline
+    align-items: flex-start
+    flex-direction: column
+  .sectionwrapper
+    margin: 0 -5mm 0 0
+  .item, .columns .item
+    padding-right: 5mm
+
+// strictly on small phones, remove left-side padding
+@media only screen and (max-width: 480px)
+  .sectionwrapper
+    margin: 0 -5mm
 
 @page
   size: A4 portrait
