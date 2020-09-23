@@ -4,7 +4,8 @@
   "description": "my cv",
   "main": "index.js",
   "scripts": {
-    "build": "relaxed --build-once cv.pug",
+    "build-html": "pug cv.pug",
+    "build-pdf": "relaxed --build-once cv.pug",
     "start": "relaxed cv.pug"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "jstransformer-sass": "^1.0.0",
     "nwmatcher": "^1.4.4",
+    "pug-cli": "^1.0.0-alpha6",
     "relaxedjs": "^0.2.4"
   }
 }

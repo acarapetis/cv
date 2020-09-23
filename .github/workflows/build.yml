@@ -13,10 +13,11 @@ jobs:
       - name: Build PDF
         run: |
           npm ci
-          npm run build
+          npm run-script build-html
+          npm run-script build-pdf
           mkdir build
           mv cv.pdf build/
-          echo '<a href=cv.pdf>View my CV</a>' > build/index.html
+          mv cv.html build/index.html
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2

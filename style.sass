@@ -10,24 +10,37 @@ body
   background-color: white
   line-height: 1.35em
 
-.page
-  height: 100%
-  padding: 15mm
-  position: relative
-  box-sizing: border-box
-
 .footer
-  position: absolute
   display: block
   width: 100%
-  bottom: 0mm
-  left: 0mm
   padding: 30pt 0
   background: #eee
   text-align: center
   p
-    margin: 0.2em auto;
+    margin: 0.2em auto
 
+@media only screen
+  body
+    padding: 2em 2em 0 2em
+  .page
+    max-width: 70em
+    margin: 0 auto
+    padding: 0 15mm
+  .footer
+    background: none
+
+@media only print
+  .page
+    height: 100%
+    padding: 15mm
+    position: relative
+    box-sizing: border-box
+  .footer
+    position: absolute
+    bottom: 0mm
+    left: 0mm
+  .hide-in-pdf
+    display: none
 
 a
   color: #25A
