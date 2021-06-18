@@ -47,26 +47,33 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
           institution='Geoscience Australia',
           where='Canberra')
       :markdown-it
-        As the lead developer for the National Earthquake Alerts Centre, I am responsible for
-        software systems that produce, store and disseminate information associated with earthquakes
-        and other seismic events. I have:
+        As the lead developer for the National Earthquake Alerts Centre (NEAC), I am responsible for
+        operational software systems that detect earthquakes and disseminate the resulting
+        information. I have:
 
-          - Continuously maintained and enhanced the earthquake alerts and analysis system, which is
+          - Maintained and enhanced the NEAC's earthquake alerts and analysis system, which is
             a mix of open-source, proprietary and bespoke software deployed on **AWS** using
             **Terraform**.
-          - Architected and developed a custom data catalogue for the storage, quality control, and
-            dissemination of earthquake-related data products of all kinds &mdash; from raw
-            seismograms through to news articles.  I built this system using **Python** on
-            **AWS**, with geospatial indexing powered by **PostgreSQL/PostGIS** and an interactive
-            frontend built on Web Components.
-          - Integrated the USGS ShakeMap modelling software into our semi-automated workflow,
-            allowing the Centre to rapidly estimate and visualize the areas most effected by an
-            earthquake.  I worked with geoscientists to tailor the configuration to Australian
-            seismology, and added several new features to the ShakeMap software to meet our
-            requirements, which I subsequently contributed back to the USGS repository.
-          - Developed pipelines to ingest, transform and integrate various data sources.
-          - Performed statistical and geospatial data analysis to support reporting and decision
-            making by the NEAC's operations and science leadership.
+          - Architected and developed a custom data platform for the quality control, storage,
+            discovery and dissemination of earthquake-related data of all kinds &mdash; from raw
+            seismograms through to news articles. **AWS/Terraform**, **Python/Flask/SQLAlchemy**,
+            **PostgreSQL/PostGIS**, [lit-element](https://lit.dev/), **JupyterHub**.
+          - Improved the NEAC's DevOps practices by gradually introducing BitBucket Pipelines.
+          - Integrated the USGS ShakeMap model into our system, allowing the Centre to
+            rapidly estimate and visualize the areas most effected by an earthquake.  I worked with
+            geoscientists to tailor the configuration to Australian seismology, and added several
+            new features to the ShakeMap software to meet our requirements, which I subsequently
+            contributed back to the USGS repository.
+          - Improved
+            [the NEAC's custom earthquake inversion software](https://github.com/GeoscienceAustralia/ga-wphase)
+            and managed its open-source release: wrote a test suite, refactored, python3
+            compatibility, performance improvements, bugfixes, statistical model enhancements,
+            replaced closed-source code with scipy equivalents)
+          - Developed pipelines to ingest external data, transform it, and integrate it into our
+            operational system.
+          - Used **Jupyter Notebooks** to quickly create re-usable data analysis and visualization
+          tools to support reporting and decision making by the NEAC's operations and science
+          leadership.
 
     +item(title='Software Engineer',
           from='May', to='Dec 2018',
@@ -82,9 +89,8 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
             using **InfluxDB**.
           - Implemented a HTTP API to manage and retrieve time series data and metadata.
           - Designed and developed a web dashboard on top of this API to provide diagnostics and
-            basic data visualization. Used **JavaScript**, including the visualization libraries
-            **D3.js** and **Plotly.js** along with modern web standards (**HTML5**, **SVG**,
-            **CSS3** transitions, **ES** modules, **Web Components**, etc.).
+            basic data visualization. **JavaScript (ES6)**, **D3.js**, **Plotly**, **HTML5**,
+            **SVG**, **CSS3**, **Web Components**.
 
         Most of this work was integrated into an existing web application built on a
         **Linux**+**Apache**+**SQLite**+**PHP** stack.
@@ -109,18 +115,12 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
         Design and full-stack development of web applications & administration of associated
         systems and databases.
 
-        I worked on various large web applications, mostly built on **Linux**+**Apache**+**Perl** and backed by
-        **MySQL** or **PostgreSQL**. The tools we used changed over the years, but **DBIx::Class**
-        and **HTML::Mason** were mainstays.  On the frontend, I used JavaScript to create
-        interactive user experiences.
+        I worked on various large web applications, mostly built on **Linux**+**Apache**+**Perl**
+        and backed by **MySQL** or **PostgreSQL**. On the frontend, I used JavaScript (**JQuery**,
+        **ExtJS**) to create interactive user experiences.
 
         Many of these applications were business systems that interfaced with older proprietary
-        software; so I became proficient in systems integration and data munging/wrangling/ETL.
-
-        I was also involved in developing simple deployment architecture and scheduled
-        processing/reporting/backup tasks; so I have extensive experience using shell scripts, cron
-        jobs and daemons to automate systems.
-
+        software; so I became proficient in systems integration and data wrangling.
   //-+section('Work History (Continued)')
 
 .page
@@ -190,10 +190,13 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
         play with online at 
         [a.carapetis.com/csf/](https://a.carapetis.com/csf/) (**TypeScript** + **Canvas**) and 
         [a.carapetis.com/diff_flow/](https://a.carapetis.com/diff_flow/) (**PixiJS**).
+        - I'm a maintainer of (and primary contributor to) the open-source library
+          [**sqlakeyset**](https://github.com/djrobstep/sqlakeyset).
         - My professional history has been concentrated on a few languages, but I have hobbyist
-        experience with many others, including **Ruby**, **C++**, **TypeScript** and **Haskell**.
-        - Graphic design (hobbyist, volunteer and freelance projects) using **Inkscape** and
-        **GIMP**.
+        experience with many others, including **Rust**, **Ruby**, **C++**, **TypeScript** and
+        **Haskell**.
+        - Graphic design (hobbyist, volunteer and freelance projects) using
+        **Inkscape** and **GIMP**.
 
   .footer
     p I designed this document from scratch and typeset it using HTML and CSS3.
