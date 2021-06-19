@@ -15,9 +15,9 @@ jobs:
             node-version: 12
       - name: Build PDF
         run: |
-          npm ci
-          npm run-script build-html
-          npm run-script build-pdf
+          yarn install --frozen-lockfile
+          yarn build-html
+          yarn build-pdf
           mkdir build
           mv cv.pdf build/
           mv cv.html build/index.html
