@@ -27,16 +27,16 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
         .titleline
           span.title Who I am
         :markdown-it
-          - Software developer with deep experience in web technologies, &nbsp; data manipulation and
+          - Software developer with 10+ years experience in web technologies, data manipulation and
             software systems integration.
-          - Mathematics PhD in geometry and differential equations. Also experienced in numerical
-            simulation and modelling.
+          - Mathematics PhD in geometry and differential equations, with practical experience in
+            numerical simulation and statistical modelling.
       .item
         .titleline
           span.title My Toolbox
         :markdown-it
-          - Python, JavaScript/ES6+, Perl, Java
-          - HTML5, CSS3, Browser APIs
+          - Python, C++, NodeJS, Bash, Perl, Java
+          - JavaScript/TypeScript, HTML5, CSS3, React, Web Components, Browser APIs
           - MySQL, SQLite, PostgreSQL
           - Linux, AWS, Terraform, Docker, Git
 
@@ -47,34 +47,50 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
           institution='Geoscience Australia',
           where='Canberra')
       :markdown-it
-        As the lead developer for the National Earthquake Alerts Centre (NEAC), I am responsible for
-        operational software systems that detect earthquakes and disseminate the resulting
-        information. I have:
+        The National Earthquake Alerts Centre (NEAC) operates highly-available software systems that
+        detect earthquakes and disseminate the resulting information.  I lead a small team of
+        engineers responsible for maintaining and enhancing these systems, providing architectural
+        guidance and code review to affirm a culture of continual improvement. I have:
 
-          - Maintained and enhanced the NEAC's earthquake alerts and analysis system, which is
-            a mix of open-source, proprietary and bespoke software deployed on **AWS** using
-            **Terraform**.
-          - Architected and developed a custom data platform for the quality control, storage,
-            discovery and dissemination of earthquake-related data of all kinds &mdash; from raw
-            seismograms through to news articles. **AWS/Terraform**, **Python/Flask/SQLAlchemy**,
+          - Architected an overhaul of our infrastructure management and DevOps practices, allowing
+          us to quickly provision functional copies of our system, e.g. for training or automated
+          testing, on **AWS** using **Terraform**.
+          - Developed a custom data platform for the quality control, storage,
+            discovery and dissemination of earthquake-related data of all kinds.
+            Built on **Python/Flask/SQLAlchemy**,
             **PostgreSQL/PostGIS**, [lit-element](https://lit.dev/), **JupyterHub**.
-          - Improved the NEAC's DevOps practices by gradually introducing BitBucket Pipelines.
-          - Integrated the USGS ShakeMap model into our system, allowing the NEAC to
-            rapidly estimate and visualize the areas most effected by an earthquake.  I worked with
-            geoscientists to tailor the configuration to Australian seismology, and added several
-            new features to the ShakeMap software to meet our requirements, which I subsequently
-            contributed back to the USGS repository.
+          - Integrated the [USGS ShakeMap](https://github.com/usgs/shakemap) model into our system,
+            allowing the NEAC to rapidly estimate and visualize the areas most effected by an
+            earthquake.  I worked with geoscientists to tailor the configuration to Australian
+            seismology, and added several new features to the ShakeMap software to meet our
+            requirements, which I subsequently contributed back to the USGS repository.
           - Improved
             [the NEAC's custom earthquake inversion
             software](https://github.com/GeoscienceAustralia/ga-wphase) and managed its open-source
             release: wrote a test suite, refactored, ported to Python 3, improved performance,
             identified and fixed bugs, enhanced statistical models, replaced closed-source code with
-            scipy equivalents.
-          - Developed pipelines to ingest external data, transform it, and integrate it into our
-            operational system.
+            **scipy** equivalents.
+          - Developed ETL pipelines to integrate external data into our operational system.
           - Used **Jupyter Notebooks** to quickly create re-usable data analysis and visualization
-          tools to support reporting and decision making by the NEAC's operations and science
-          leadership.
+            tools to support reporting and decision making by the NEAC's operations and science
+            leadership.
+
+    +item(title='Solutions Developer',
+          from='Dec 2020',
+          institution='Diversity Arrays Technology',
+          where='Canberra')
+      :markdown-it
+        I'm consulting with the genomics company Diversity Arrays Technology (DArT) one day a week. I am:
+
+          - Developing high-performance software for statistical analysis of DNA using **C++/CUDA**.
+          - Building a proof-of-concept cloud data workbench for genomics, using
+            **TypeScript/React** and **Docker** to integrate the open-source Eclipse Theia IDE
+            platform with DArT's existing tools.
+          - Providing advice and initial implementation for various DevOps concerns, e.g.
+            implementing compilation and packaging of MATLAB code using **GitLab CI** and CUDA
+            containerization using **nvidia-docker**.
+
+
 
     +item(title='Software Engineer',
           from='May', to='Dec 2018',
@@ -108,6 +124,9 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
           *Advanced Mathematics and Applications*,
           *Black Holes and Cosmology*.
 
+.page
+  +section('Work History (Continued)')
+
     +item(title='Software Developer',
           from=2006, to=2013,
           institution='Unisolve Pty Ltd',
@@ -121,10 +140,9 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
         **ExtJS**) to create interactive user experiences.
 
         Many of these applications were business systems that interfaced with older proprietary
-        software; so I became proficient in systems integration and data wrangling.
-  //-+section('Work History (Continued)')
+        software; so I became proficient in systems integration, data wrangling/ETL and job
+        scheduling.
 
-.page
   +section('Education')
     +item(title='Doctor of Philosophy (Mathematics)',
       from=2013, to=2018,
@@ -194,10 +212,9 @@ meta(name='viewport', content='width=device-width, initial-scale=1.0')
         - I'm a maintainer of (and primary contributor to) the open-source library
           [**sqlakeyset**](https://github.com/djrobstep/sqlakeyset).
         - My professional history has been concentrated on a few languages, but I have hobbyist
-        experience with many others, including **Rust**, **Ruby**, **C++**, **TypeScript** and
-        **Haskell**.
-        - Graphic design (hobbyist, volunteer and freelance projects) using
-        **Inkscape** and **GIMP**.
+        experience with many others, including **Rust**, **Haskell** and **Ruby**.
+        - Graphic design (hobbyist, volunteer and freelance projects) using **Inkscape** and
+        **GIMP**.
 
   .footer
     p I designed this document from scratch and typeset it using HTML and CSS3.
