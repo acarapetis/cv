@@ -9,15 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use NodeJS 18
-        uses: actions/setup-node@v1
+      - name: Use NodeJS 22
+        uses: actions/setup-node@v5
         with:
-            node-version: 18
+            node-version: 22
       - name: Build PDF
         run: |
-          yarn install --frozen-lockfile
-          yarn build-html
-          yarn build-pdf
+          npm ci
+          npm run build
           mkdir build
           mv cv.pdf build/
           mv cv.html build/index.html

@@ -4,9 +4,7 @@
   "description": "my cv",
   "main": "index.js",
   "scripts": {
-    "build-html": "pug cv.pug",
-    "build-pdf": "relaxed --build-once cv.pug",
-    "start": "relaxed cv.pug"
+    "build": "playwright install chromium && playwright pdf ./cv.html ./cv.pdf"
   },
   "repository": {
     "type": "git",
@@ -23,12 +21,6 @@
   "homepage": "https://github.com/acarapetis/cv#readme",
   "public": false,
   "dependencies": {
-    "jstransformer-sass": "^1.0.0",
-    "pug": ">=3.0.1",
-    "pug-cli": ">=1.0.0-alpha6",
-    "relaxedjs": "0.2.1"
-  },
-  "resolutions": {
-    "node-sass": "^7.0.1"
+    "playwright": "^1.55.1"
   }
 }

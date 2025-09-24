@@ -4,6 +4,12 @@
     <title>Anthony Carapetis - Curriculum Vitae</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      // Ensure webfonts load before playwright prints to PDF
+      document.addEventListener('DOMContentLoaded', async () => {
+          await document.fonts.ready;
+      });
+    </script>
   </head>
   <body>
     <div class="page">
