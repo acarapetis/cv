@@ -3,8 +3,6 @@ This is my CV. It's written in plain HTML and CSS. I've handcrafted the
 [CSS styles](./style.css) so that the same document looks good in print and on any
 screen - try it on your phone!
 
-It also compiles to PDF using [ReLaXed](https://github.com/RelaxedJS/ReLaXed).
+It also compiles to PDF using playwright - you can build it by running `npm install && npm run build`.
 
-After running `npm install`, run `npm start` to start the development server, which will recompile cv.pdf every time cv.pug changes. To compile the PDF as a once-off, use `npm run-script build-pdf`.
-
-This repository also includes a [GitHub Actions workflow](./.github/workflows/build.yml) which compiles the CV in both HTML and PDF formats and [publishes it to GitHub Pages](https://acarapetis.github.io/cv/).
+This repository also includes a [GitHub Actions workflow](./.github/workflows/build.yml) which compiles the CV to PDF format and [publishes it to GitHub Pages](https://acarapetis.github.io/cv/).
