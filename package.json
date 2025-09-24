@@ -4,7 +4,7 @@
   "description": "my cv",
   "main": "index.js",
   "scripts": {
-    "build": "playwright install chromium && playwright pdf ./cv.html ./cv.pdf"
+    "build": "playwright install chromium && playwright pdf ./index.html ./cv.pdf"
   },
   "repository": {
     "type": "git",
