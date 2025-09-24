@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Anthony Carapetis - Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Ensure webfonts load before playwright prints to PDF
+      document.addEventListener('DOMContentLoaded', async () => {
+          await document.fonts.ready;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="main">
+          <h1>Anthony Carapetis</h1>
+          <h2>Curriculum Vitae</h2>
+        </div>
+        <div class="view-as-pdf"><a href="cv.pdf">View as PDF</a></div>
+        <div class="contact">
+          <div class="email">
+            <a href="mailto:anthony.carapetis@gmail.com">anthony.carapetis@gmail.com</a>
+          </div>
+          <div class="website">
+            <a href="https://a.carapetis.com">a.carapetis.com</a>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="headline"><h2>At a Glance</h2></div>
+          <div class="columns">
+            <div class="item">
+              <div class="titleline"><span class="title">Who I am</span></div>
+              <ul>
+                <li>
+                  Software developer with 10+ years experience in web technologies, data manipulation and software
+                  systems integration.
+                </li>
+                <li>
+                  Mathematics PhD in geometry and differential equations, with practical experience in numerical
+                  simulation and statistical modelling.
+                </li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">My Toolbox</span>
+              </div>
+              <ul>
+                <li>Python, C++, Bash, Rust</li>
+                <li>JavaScript/TypeScript, HTML5, CSS3, React, Web Components, Browser APIs</li>
+                <li>PostgreSQL, MySQL, SQLite</li>
+                <li>Linux, AWS, Terraform, Docker, Git</li>
+              </ul>
+            </div>
+          </div>
+      </section>
+      <section>
+        <div class="headline"><h2>Work History</h2></div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Software Engineer</span>
+                <div class="spacetime">
+                  <div class="when">Jan 2019&ndash;</div>
+                  <div class="institution"><span class="note">under contract to</span> Geoscience Australia</div>
+                  <div class="where">Canberra</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  The National Earthquake Alerts Centre (NEAC) operates highly-available software systems that detect
+              earthquakes and disseminate the resulting information. I am the lead developer on a small team responsible
+              for maintaining and enhancing these systems, providing architectural guidance and fostering a culture of
+              code review and continual improvement.
+                </p>
+                <ul>
+                  <li>
+                    Led an overhaul of our infrastructure management and DevOps practices, allowing us to quickly
+                    provision functional copies of our system, e.g. for training or automated testing, on
+                    <b>AWS</b> using <b>Terraform</b>.
+                  </li>
+                  <li>
+                    Developed a custom data platform for the quality control, storage, discovery and dissemination of
+                    earthquake-related data of all kinds. Built on
+                    <b>Python/Flask/SQLAlchemy</b>, <b>PostgreSQL/PostGIS</b>,
+                    <a href="https://lit.dev/">lit-element</a>, <b>JupyterHub</b>.
+                  </li>
+                  <li>
+                    Integrated the
+                    <a href="https://github.com/usgs/shakemap">USGS ShakeMap</a>
+                    model into our system, allowing the NEAC to rapidly estimate and visualize the areas most effected
+                    by an earthquake. I worked with geoscientists to tailor the configuration to Australian seismology,
+                    and added several new features to the ShakeMap software to meet our requirements, which I
+                    subsequently contributed back to the USGS repository.
+                  </li>
+                  <li>
+                    Improved
+                    <a href="https://github.com/GeoscienceAustralia/ga-wphase"
+                      >the NEAC's custom earthquake inversion software</a
+                    >
+                    and managed its open-source release: wrote a test suite, refactored, ported to Python 3, improved
+                    performance, identified and fixed bugs, enhanced statistical models, replaced closed-source code
+                    with
+                    <b>scipy</b> equivalents.
+                  </li>
+                  <li>Developed ETL pipelines to integrate external data into our operational system.</li>
+                  <li>
+                    Created re-usable data extraction, analysis and visualization tools with
+                    <b>Jupyter, pandas + scipy</b> to support reporting and decision making by the NEAC's operations and
+                    science leadership.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Software Engineer</span>
+                <div class="spacetime">
+                  <div class="when">May&ndash;Dec 2018</div>
+                  <div class="institution"><b>CSIRO</b></div>
+                  <div class="where">Canberra</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  A fixed-term position at the
+                  <em>High Resolution Plant Phenomics Centre</em> developing software for agriculture and plant science.
+                  My main focus was developing infrastructure to exploit time series data gathered from sensor networks:
+                </p>
+                <ul>
+                  <li>
+                    Reworked data ingest processes and set up a new storage and aggregation solution using
+                    <b>InfluxDB</b>.
+                  </li>
+                  <li>Implemented a HTTP API to manage and retrieve time series data and metadata.</li>
+                  <li>
+                    Designed and developed a web dashboard on top of this API to provide diagnostics and basic data
+                    visualization.
+                    <b>JavaScript (ES6)</b>, <b>D3.js</b>, <b>Plotly</b>,
+                    </b>HTML5</b>, <b>SVG</b>, <b>CSS3</b>,
+                    <b>Web Components</b>.
+                  </li>
+                </ul>
+                <p>
+                  Most of this work was integrated into an existing web application built on a
+                  <b>Linux</b>+<b>Apache</b>+<b>SQLite</b>+<b>PHP</b> stack. I
+                  also contributed to other projects, including a REST microservice built in
+                  <b>Java</b>/<b>Spring</b> and deployed using <b>Docker</b>.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Casual Sessional Teacher</span>
+                <div class="spacetime">
+                  <div class="when">2015&ndash;2017</div>
+                  <div class="institution">Australian National University</div>
+                  <div class="where">Canberra</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Teaching and marking for undergraduate classes in:
+                  <em>Introduction to Mathematical Thinking</em>, <em>Advanced Mathematics and Applications</em>,
+                  <em>Black Holes and Cosmology</em>.
+                </p>
+              </div>
+            </div>
+      </section>
+    </div>
+    <div class="page">
+      <section>
+        <div class="headline"><h2>Work History (Continued)</h2></div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Software Developer</span>
+                <div class="spacetime">
+                  <div class="when">2006&ndash;2013</div>
+                  <div class="institution">Unisolve Pty Ltd</div>
+                  <div class="where">Melbourne</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Design and full-stack development of web applications &amp; administration of associated systems and
+                  databases.
+                </p>
+                <p>
+                  I worked on various large web applications, mostly built on
+                  <b>Linux</b>+<b>Apache</b>+<b>Perl</b> and backed by
+                  <b>MySQL</b> or <b>PostgreSQL</b>. On the frontend, I used JavaScript
+                  (<b>JQuery</b>, <b>ExtJS</b>) to create interactive user experiences.
+                </p>
+                <p>
+                  Many of these applications were business systems that interfaced with older proprietary software; so I
+                  became proficient in systems integration, data wrangling/ETL and job scheduling.
+                </p>
+              </div>
+            </div>
+      </section>
+      <section>
+        <div class="headline"><h2>Education</h2></div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Doctor of Philosophy (Mathematics)</span>
+                <div class="spacetime">
+                  <div class="when">2013&ndash;2018</div>
+                  <div class="institution">Australian National University</div>
+                  <div class="where">Canberra</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  <b>PhD Thesis:</b>
+                  <a href="https://openresearch-repository.anu.edu.au/handle/1885/142453"
+                    ><em>Geometric Flows of Diffeomorphisms</em></a
+                  >.<br>
+                  <b>Supervisor:</b> Ben Andrews.<br>
+                  Geometric flows hijack what we know about the physics of
+                  heat flow to study geometry: by making a mathematical analogy between &quot;spikiness&quot; and heat,
+                  we can deform poorly-understood spiky objects to simple smooth ones; and by understanding the
+                  mathematical properties of this deformation we can derive new knowledge about the spiky things we
+                  started with. In my thesis research, I applied this methodology to a previously unstudied class of
+                  flow.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Bachelor of Science Advanced (with Honours)</span>
+                <div class="spacetime">
+                  <div class="when">2009&ndash;2012</div>
+                  <div class="institution">Monash University</div>
+                  <div class="where">Melbourne</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  <b>Majors:</b> Mathematics, Physics.<br>
+                  <b>Honours Thesis:</b>
+                  <em>The Riemannian Penrose Inequality and the Inverse Mean Curvature Flow</em>.<br>
+                  <b>Supervisor:</b> Gilbert Weinstein.<br>
+                  The universe should weigh at least as much as the
+                  biggest black hole it contains, but the mathematical embodiment of this fact (the Penrose Inequality)
+                  is remarkably difficult to derive from general relativity: it took until 1999 for even a special case
+                  to be proven. This thesis was an exposition of the problem and its solution intended for a slightly
+                  less expert audience.
+                </p>
+              </div>
+            </div>
+      </section>
+      <section>
+        <div class="headline"><h2>Undergraduate Research</h2></div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Summer Vacation Research Scholarship</span>
+                <div class="spacetime">
+                  <div class="when">2011&ndash;2012</div>
+                  <div class="institution">Monash University</div>
+                  <div class="where">Melbourne</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Reading project on the problem of <em>minimal surfaces</em>: if you dip a wonky loop of wire in a
+                  bucket of soapy water, what is the shape of the resulting bubble? The techniques developed to study
+                  this problem are now ubiquitous in physics and geometry.
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">Mathematics Research Project</span>
+                <div class="spacetime">
+                  <div class="when">2011</div>
+                  <div class="institution">Monash University</div>
+                  <div class="where">Melbourne</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Reading project in <em>comparison geometry</em>, the quantitative study of how the familiar
+                  relationships of lengths and angles change when we work on a curved surface (or in a curved space).
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="titleline">
+                <span class="title">AMSI Vacation Research Scholarship</span>
+                <div class="spacetime">
+                  <div class="when">2010&ndash;2011</div>
+                  <div class="institution">AMSI/Monash University</div>
+                  <div class="where">Melbourne</div>
+                </div>
+              </div>
+              <div class="description">
+                <p>
+                  Numerical investigation of <em>p</em>-adic zeta functions using the mathematical programming language
+                  PARI/GP. Culminated in a presentation at the CSIRO Big Day In.
+                </p>
+              </div>
+            </div>
+      </section>
+      <section>
+        <div class="headline"><h2>Other Experience</h2></div>
+            <div class="noline item">
+              <div class="titleline">
+                <span class="title">Some things don't come from work or school.</span>
+                <div class="spacetime"></div>
+              </div>
+              <div class="description">
+                <ul>
+                  <li>
+                    Interactive Media: as a spin-off from my thesis research, I combined numerical simulations of
+                    partial differential equations with my expertise in frontend web development to develop interactive
+                    visualizations of some geometric flows, which you can play with online at
+                    <a href="https://a.carapetis.com/csf/">a.carapetis.com/csf/</a>
+                    (<b>TypeScript</b> + <b>Canvas</b>) and
+                    <a href="https://a.carapetis.com/diff_flow/">a.carapetis.com/diff_flow/</a>
+                    (<b>PixiJS</b>).
+                  </li>
+                  <li>Various other toy projects can be found on my website and github page.</li>
+                  <li>
+                    I'm a maintainer of (and primary contributor to) the open-source library
+                    <a href="https://github.com/djrobstep/sqlakeyset"><b>sqlakeyset</b></a
+                    >.
+                  </li>
+                </ul>
+              </div>
+            </div>
+      </section>
+      <footer>
+        <p>I designed this document from scratch and typeset it using HTML and CSS3.</p>
+        <p>
+          See
+          <a href="https://github.com/acarapetis/cv">github.com/acarapetis/cv </a>for the source code.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
