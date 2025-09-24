@@ -18,7 +18,7 @@ jobs:
           npm ci
           npm run build
           mkdir build
-          mv cv.pdf build/
+          mv cv.pdf style.css build/
           mv cv.html build/index.html
       - name: Deploy to GitHub Pages
         if: success()

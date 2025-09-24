@@ -1,5 +1,7 @@
 # CV
-This is my CV. It's written in [Pug](https://pugjs.org/), which is a simple templating engine that compiles directly to HTML. I've handcrafted the [CSS styles](./style.sass) so that the same document looks good in print and on any screen - try it on your phone!
+This is my CV. It's written in plain HTML and CSS. I've handcrafted the
+[CSS styles](./style.css) so that the same document looks good in print and on any
+screen - try it on your phone!
 
 It also compiles to PDF using [ReLaXed](https://github.com/RelaxedJS/ReLaXed).
 
